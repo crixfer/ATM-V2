@@ -1,6 +1,63 @@
-# Cajero Automático Digital
+# ATM Digital - V2
 
-Aplicación de consola desarrollada en C# que simula algunas operaciones básicas de un cajero automático. Permite consultar un balance, realizar depósitos y retirar dinero de una cuenta de prueba. Es un proyecto educativo y no se conecta a servicios bancarios reales.
+Aplicación de consola desarrollada en C# que simula el funcionamiento de un cajero automático con flujo bancario básico. La versión actual corresponde a una evolución del proyecto base y agrega validación de acceso, manejo de saldo, depósitos, retiros y historial de operaciones.
+
+## Funcionalidades incluidas
+
+- Validación de acceso por número de cuenta de prueba.
+- Límite de intentos para acceder a la cuenta.
+- Estado de cuenta activo/inactivo.
+- Consulta del saldo disponible.
+- Depósitos con validación del monto.
+- Retiros con validación de fondos suficientes.
+- Historial de movimientos de la operación.
+- Menú interactivo en consola con bucle de ejecución.
+- Datos de cliente y nombre bancario fijos para demostración.
+
+## Flujo del programa
+
+Al iniciar, la aplicación:
+
+1. Muestra una bienvenida y la opción de ingreso de cuenta.
+2. Valida si el número introducido coincide con la cuenta activa.
+3. Si la cuenta es válida, presenta el menú principal.
+4. Permite consultar saldo, depositar, retirar y revisar el historial.
+5. Continúa ejecutándose hasta que el usuario elige salir.
+
+## Operaciones disponibles
+
+### 1. Consulta de saldo
+Muestra el saldo disponible actual en la cuenta.
+
+### 2. Depósito a cuenta
+- Solicita el monto a ingresar.
+- Verifica que sea mayor que cero.
+- Suma el valor al saldo actual.
+- Registra el movimiento en el historial.
+
+### 3. Retiro
+- Solicita el monto a retirar.
+- Verifica que el valor sea válido y mayor que cero.
+- Comprueba que exista suficiente saldo.
+- Resta el monto del balance.
+- Guarda la operación en el historial.
+
+### 4. Historial de movimientos
+Muestra la lista de movimientos realizados durante la sesión, con numeración secuencial.
+
+### 5. Salir
+Finaliza el menú y termina la ejecución del programa.
+
+## Datos de prueba
+
+La aplicación cuenta con un cliente de ejemplo y una cuenta activa en modo demostración:
+
+- Nombre del cliente: `Christopher Portorreal`
+- Saldo inicial: `RD$25,000.00`
+- Cuenta activa de prueba: `1`
+- Cuenta inactiva de prueba: `2`
+
+> La cuenta activa se habilita únicamente cuando se ingresa `1`, por lo que el flujo de validación está pensado para demostración y pruebas en consola.
 
 ## Requisitos
 
@@ -14,39 +71,38 @@ Desde la raíz del repositorio, ejecuta:
 dotnet run --project ATMProject/ATMProject.csproj
 ```
 
-## Uso
+## Estructura del proyecto
 
-Al iniciar, el programa solicita un número de cuenta y luego presenta un menú con estas opciones:
+```text
+ATM-V1/
+├── README.md
+├── atm.psc
+├── sin_titulo.psc
+└── ATMProject/
+    ├── ATMProject.csproj
+    ├── Program.cs
+    ├── bin/
+    └── obj/
+```
 
-1. Consultar el balance disponible.
-2. Depositar dinero.
-3. Retirar dinero.
-4. Salir del menú.
+La lógica principal está en [ATMProject/Program.cs](ATMProject/Program.cs) y la configuración del proyecto en [ATMProject/ATMProject.csproj](ATMProject/ATMProject.csproj).
 
-Los depósitos y retiros deben ser mayores que cero. No se permite retirar más dinero del balance disponible. El programa muestra el balance actualizado después de cada operación.
-
-## Datos de prueba y comportamiento actual
-
-- El balance inicial es de **RD$25,000.00**.
-- El nombre del cliente está definido en el código como `Christopher Portorreal`; actualmente no se solicita por consola.
-- La pantalla anuncia los números `123456` y `111222`, pero la validación del código activa la cuenta únicamente cuando se introduce `1`. Por lo tanto, los números anunciados no funcionan como identificadores de cuenta en la versión actual.
-- El balance y las operaciones se conservan solo durante la ejecución. Al cerrar el programa, los cambios se pierden.
-
-## Tecnologías
+## Tecnologías utilizadas
 
 - C#
 - .NET 10
+- Consola interactiva
 
-## Estructura
+## Alcance del proyecto
 
-```text
-ATMProject/
-├── ATMProject.csproj
-└── Program.cs
-```
+Este proyecto tiene fines educativos y demuestra conceptos fundamentales de programación en C# como:
 
-La lógica de la aplicación está en [`ATMProject/Program.cs`](ATMProject/Program.cs) y la configuración del proyecto en [`ATMProject/ATMProject.csproj`](ATMProject/ATMProject.csproj).
+- variables y constantes
+- validación de entrada de usuario
+- estructuras condicionales
+- bucles
+- métodos reutilizables
+- listas y manejo de historiales
+- operaciones con saldo bancario en memoria
 
-## Alcance
-
-Este proyecto sirve como práctica de programación en C#: entrada y salida por consola, validación de datos, condicionales, ciclos, métodos y operaciones con saldo. No implementa autenticación segura, persistencia de datos ni transacciones financieras reales.
+No implementa autenticación real, persistencia de datos ni conexiones con servicios bancarios externos.
