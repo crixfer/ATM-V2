@@ -14,6 +14,9 @@ decimal montoOperacion = 0m;
 int opcionMenu = 0;
 int intentoAcceso = 3;
 
+List<string> movimientos = new List<string>();
+
+
 // Fin variables
 
 // inicio sistema ditigal
@@ -66,7 +69,8 @@ void MostrarMenu() // Metodo para mostrar menu
         Console.WriteLine("1. Consulta de balance disponible.");
         Console.WriteLine("2. Depósito a cuenta.");
         Console.WriteLine("3. Retiro.");
-        Console.WriteLine("\n4. Salir del menú.");
+        Console.WriteLine("4. Historial de movimientos.");
+        Console.WriteLine("\n5. Salir del menú.");
 
         Console.WriteLine("\t\n**************************************");
 
@@ -94,6 +98,8 @@ decimal Deposito(string mensaje) // Metodo manejo depositos y nuevo balance
     Console.WriteLine("\n***** Monto agregado satisfactoriamente *****");
 
     saldoDisponible += montoOperacion; // adiciona nuevo monto a balnace actual
+
+    movimientos.Add($"Deposito: RD${montoOperacion:N2}"); // agrega movimiento a la lista
 
     MostrarBalance(); // Funcion mostrar balance modificado
 
@@ -128,11 +134,31 @@ decimal Retiro(string mensaje) // Metodo Retiro
 
 
     saldoDisponible -= montoOperacion; // resta monto retirado
+
+    movimientos.Add($"Retiro: RD${montoOperacion:N2}"); // agrega movimiento a la lista
+
     Console.WriteLine($"\nHa retirado: $RD{montoOperacion:N2}"); // muestra total retirado
 
     MostrarBalance(); // Metodo balance
     return saldoDisponible; // retorna el balance modificado
     
+}
+
+
+void MostrarHistorial() // Metodo Movimientos
+{
+    if (movimientos.Count == 0)
+    {
+        Console.WriteLine("Sin movimientos.");
+    }
+
+    int orden = 1;
+
+    foreach (string movimiento in movimientos)
+    {
+        Console.WriteLine($"{orden} - {movimiento}.");
+        orden++;
+    }
 }
 
 // FIN METODOS_____________________________________________________________________________________________
@@ -145,11 +171,12 @@ if (estadoCuentaActiva) // validacion estado de cuenta
     
     // loop de opciones
     do
-    {
+    {   
+        
         MostrarMenu(); //  MENU
             
             // loop mientras validacion de entrada
-            while (!int.TryParse(Console.ReadLine(), out opcionMenu) || opcionMenu < 1 || opcionMenu > 4)
+            while (!int.TryParse(Console.ReadLine(), out opcionMenu) || opcionMenu < 1 || opcionMenu > 5)
             {
                 // mensaje de error
                 Console.WriteLine("Mensaje: Debe elegir un número del menú de opciones!");
@@ -162,26 +189,31 @@ if (estadoCuentaActiva) // validacion estado de cuenta
             {   
                 // consulta de saldo disponible ****************************************************************************************
                 case 1:
-                Console.WriteLine("\n1. * Solicitud de balance disponible. *");
-                MostrarBalance(); // Metodo balance
-                break;
-                
+                    Console.WriteLine("\n1. * Solicitud de balance disponible. *");
+                    MostrarBalance(); // Metodo balance
+                    break;
                 // deposito a cuenta ****************************************************************************************************
                 case 2:
-                Console.WriteLine("\n2. ** Depósito a cuenta. **");
-                Deposito("\n- Que monto desea depositar: "); // Metodo deposito
-                break;
+                    Console.WriteLine("\n2. ** Depósito a cuenta. **");
+                    Deposito("\n- Que monto desea depositar: "); // Metodo deposito
+                    break;
 
                 // retiro desde cuenta **************************************************************************************************
                 case 3:
-                Console.WriteLine("\n3. *** Retiro. ***");
-                Retiro("\n- Que monto desea retirar: "); // Metodo Retiro
-                break;
+                    Console.WriteLine("\n3. *** Retiro. ***");
+                    Retiro("\n- Que monto desea retirar: "); // Metodo Retiro
+                    break;
+
+                // Historial de la cuenta ***********************************************************************************************
+                case 4:
+                    Console.WriteLine("\n**** Historial ****\n");
+                    MostrarHistorial(); //  Metodo para mostrar historial
+                    break;
             }
             // fin del menu switch
 
         
-    } while (opcionMenu != 4); // si es mayor, tambien saldra
+    } while (opcionMenu != 5); // si es mayor, tambien saldra
 }
 else if (!estadoCuentaActiva) // valida estado de cuenta
 {

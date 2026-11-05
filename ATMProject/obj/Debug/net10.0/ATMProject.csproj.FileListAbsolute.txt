@@ -13,3 +13,18 @@
 /home/crixfer/Projects/C#/ATM-V1/ATMProject/obj/Debug/net10.0/ATMProject.pdb
 /home/crixfer/Projects/C#/ATM-V1/ATMProject/obj/Debug/net10.0/ATMProject.genruntimeconfig.cache
 /home/crixfer/Projects/C#/ATM-V1/ATMProject/obj/Debug/net10.0/ref/ATMProject.dll
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\bin\Debug\net10.0\ATMProject.exe
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\bin\Debug\net10.0\ATMProject.deps.json
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\bin\Debug\net10.0\ATMProject.runtimeconfig.json
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\bin\Debug\net10.0\ATMProject.dll
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\bin\Debug\net10.0\ATMProject.pdb
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\obj\Debug\net10.0\ATMProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\obj\Debug\net10.0\ATMProject.AssemblyInfoInputs.cache
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\obj\Debug\net10.0\ATMProject.AssemblyInfo.cs
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\obj\Debug\net10.0\ATMProject.csproj.CoreCompileInputs.cache
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\obj\Debug\net10.0\ATMProject.sourcelink.json
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\obj\Debug\net10.0\ATMProject.dll
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\obj\Debug\net10.0\refint\ATMProject.dll
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\obj\Debug\net10.0\ATMProject.pdb
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\obj\Debug\net10.0\ATMProject.genruntimeconfig.cache
+C:\Users\comma\OneDrive\Documents\CODING\Bootcamp C#\ATMProject\ATM-V1\ATMProject\obj\Debug\net10.0\ref\ATMProject.dll
